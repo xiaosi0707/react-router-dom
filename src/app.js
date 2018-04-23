@@ -211,10 +211,23 @@ function Bbb() {
     )
 }
 
+/*
+* render用来显示什么
+* component用来匹配什么
+* */
 ReactDOM.render(
     <Router>
         <div>
-            <Route path='/app' component={App}></Route>
+            <Route path='/app' render={
+                () => {
+                    return (
+                        <div>
+                                当前组件是app
+                                <App />
+                        </div>
+                    )
+                }
+            }></Route>
             <Route path='/aaa' component={Aaa}></Route>
             <Route path='/bbb' component={Bbb}></Route>
         </div>
